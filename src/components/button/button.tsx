@@ -29,7 +29,7 @@ export type ButtonProps = React.ComponentProps<"button"> &
     asChild?: boolean;
   };
 
-export default function Button({
+export function Button({
   className,
   variant,
   size,
