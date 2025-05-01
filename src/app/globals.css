@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
+@custom-variant dark (&:is([data-theme="dark"] *));
 
 :root {
   --background: oklch(1 0 0);
@@ -17,7 +17,7 @@
   --shadow-offset-y: 0.15rem;
 }
 
-.dark {
+[data-theme="dark"] {
   --background: oklch(0.25 0 0);
   --foreground: oklch(1 0 0);
   --primary: oklch(0.795 0.184 86.047);
@@ -41,6 +41,8 @@
 
   --shadow: var(--shadow-offset-x) var(--shadow-offset-y) 0 0 var(--border);
 
+  --icon-storke-width: 0.15rem;
+
   --font-display: var(--font-display);
   --font-text: var(--font-text);
 }
@@ -52,5 +54,9 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+
+  .lucide {
+    stroke-width: var(--icon-storke-width);
   }
 }
